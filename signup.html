@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5daf43d836.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="sc.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <!-- <div class="container ">
+        <img src="./login-img.png" alt="">
+        <form class="form form--hidden " id="login">
+            <h1 class="form-title">Login</h1>
+            <div class="form-message form-msg-err"></div>
+            <div class="form-input-">
+                <input type="text" class="form-input" autofocus placeholder="username">
+                <div class="err-msg">Thus is an error message</div>
+            </div>
+            <div class="form-input-">
+                <input type="password" class="form-input err-msg" autofocus placeholder="password">
+                <div class="err-msg"></div>
+            </div>
+            <button type="submit">Log in</button>
+            <p class="form-links">
+                <a href="#" class="text-links">Forgot your password?</a>
+            </p>
+            <p class="form-links">
+                <a href="" class="text-links" id="linkCreateAccount">Don't have an account? Create Acoount</a>
+            </p>
+        </form> -->
+     <div class="container">
+        <img src="./login-img.png" alt="">
+        <form class="form " id="createAccount">
+            
+            <h1 class="form-title">Create Account</h1>
+            <div class="form-message form-msg-err" id="red-msg"></div>
+
+            <div class="form-input-">
+                <input type="email" class="form-input" id="userNa" autofocus placeholder="Email Address" required>
+                <div class="err-msg"></div>
+            </div>
+
+            <div class="form-input">
+                <input type="text" class="form-input" autofocus placeholder="UserName">
+                <div class="err-msg"></div>
+            </div>
+
+            <div class="form-input">
+                <input type="password" class="form-input err-msg" id="passW" autofocus placeholder="password" required>
+                <div class="err-msg"></div>
+            </div>
+
+           
+            <button id=store >Continue</button>
+            <p class="form-links">
+                <a href="login.html" class="text-links" id="">Alredy have an account? Login</a>
+            </p>
+        </form>
+    </div>
+
+    <script>
+        //to store users data in local storage (by pushing to empy array)
+        function validateEmail(eName, data) {
+    return data.entranceName === eName;
+}
+        var arr = []
+document.getElementById('store').addEventListener('click', (e) =>  {
+    e.preventDefault()
+    let data = {
+        entranceName: document.getElementById("userNa").value,
+        Key: document.getElementById("passW").value
+    }
+    arr.push(data)
+    let outs = JSON.parse(localStorage.getItem("LoginDatas"));
+    const Ename = document.getElementById("userNa").value;
+    const PassWod =  document.getElementById("passW").value;
+    for (let data of outs){
+        if (validateEmail(Ename, data)) {
+            alert("Email alread used pls input another")
+            window.location.href = "signup.html"
+        } else {
+            if(Ename !="" && PassWod !=""){
+        localStorage.setItem("LoginDatas", JSON.stringify(arr));
+        if (window.confirm('Sign up succesful click ok to go to login page .')) {
+            window.location.href = "login.html"
+        };
+       
+    } else{
+        alert("Invalid details or make sure you input all fields") 
+    } 
+        }
+    }
+})
+    </script>
+    
+    <script src="sc.js"></script>
+</body>
+</html>

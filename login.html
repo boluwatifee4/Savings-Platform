@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5daf43d836.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="sc.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <img src="./login-img.png" alt="">
+        <form class="form " id="login">
+            <h1 class="form-title">Login</h1>
+            <div class="form-message form-msg-err"></div>
+            <div class="form-input-">
+                <input type="email" class="form-input" id="userName" autofocus placeholder="Enter your email">
+                <div class="err-msg"></div>
+            </div>
+            <div class="form-input-">
+                <input type="password" class="form-input err-msg" id="passWord" autofocus placeholder="password">
+                <div class="err-msg"></div>
+            </div>
+            <button id="regis">Log in</button>
+            <p class="form-links">
+                <a href="#" class="text-links">Forgot your password?</a>
+            </p>
+            <p class="form-links">
+                <a href="signup.html" class="text-links" id="">Don't have an account? Create Acoount</a>
+            </p>
+        </form>
+        <a href="index.html" id="appen"></a>
+    </div>
+
+    <script>
+        document.getElementById('regis').addEventListener('click',(ev)=>{
+    ev.preventDefault()
+    let out = JSON.parse(localStorage.getItem("LoginDatas"));
+    const name = document.getElementById("userName").value;
+     const passWord = document.getElementById("passWord").value;
+    for (let data of out) {
+        if (validateLogin(name, passWord, data)) {
+            alert("succesful")
+            window.location.href = "index.html"
+        } else {
+            if (window.confirm('wrong inputs click "ok" to be redirected.')) {
+                window.location.href = "login.html"
+            }
+
+       }
+   }
+    
+})
+    </script>
+    <script src="sc.js"></script>
+</body>
+</html>
