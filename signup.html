@@ -73,28 +73,30 @@ document.getElementById('store').addEventListener('click', (e) =>  {
         Key: document.getElementById("passW").value
     }
     arr.push(data)
-    let outs = JSON.parse(localStorage.getItem("LoginDatas"));
     const Ename = document.getElementById("userNa").value;
     const PassWod =  document.getElementById("passW").value;
-    for (let data of outs){
-        if (validateEmail(Ename, data)) {
-            alert("Email alread used pls input another")
-            window.location.href = "signup.html"
-        } else {
-            if(Ename !="" && PassWod !=""){
-        localStorage.setItem("LoginDatas", JSON.stringify(arr));
+    
+        if (Ename !="" && PassWod !="") {
+            localStorage.setItem("LoginDatas", JSON.stringify(arr));
         if (window.confirm('Sign up succesful click ok to go to login page .')) {
             window.location.href = "login.html"
         };
-       
-    } else{
-        alert("Invalid details or make sure you input all fields") 
-    } 
         }
-    }
-})
+
+ })
+  // let outs = JSON.parse(localStorage.getItem("LoginDatas"));
+ // for (let data of outs){
+    //     } else {
+    //         if(  validateEmail(Ename, data)){
+    //             alert("Email alread used pls input another")
+    // window.location.href = "signup.html"   
+    // } else{
+    //     alert("Invalid details or make sure you input all fields") 
+    // } 
+    //     }
     </script>
-    
+  
+   
     <script src="sc.js"></script>
 </body>
 </html>

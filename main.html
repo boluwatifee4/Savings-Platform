@@ -183,7 +183,7 @@ let wall = localStorage.getItem("wallet");
             let autoStoredBal = Number(localStorage.getItem("wallet"));
             let storedBala = Number(localStorage.getItem("defBal"))
             let autoW = document.getElementById('autoWith').value;
-            if(autoW !=" " && autoW >50){
+            if(autoW !=" " && autoW >50 && autoW < storedBala){
                 let withAuto = Number(autoStoredBal)-Number(autoW)
                 let NewDefBal = Number(withAuto)+Number(storedBala) 
                 localStorage.setItem("wallet",withAuto)

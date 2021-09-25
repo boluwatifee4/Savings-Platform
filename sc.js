@@ -4,6 +4,7 @@ document.getElementById('acctBal').innerHTML =   "Acct Balance: ₦" + disPlayBa
 // let defBal = 500
 // localStorage.setItem("defACCBal", defBal)
 function go (){
+    let overBal = localStorage.getItem('defBal')
     let inMoney = document.getElementById('depo').value;
     if (inMoney !="" && inMoney > 49){
         let storedBal = localStorage.getItem("defBal")
@@ -12,7 +13,7 @@ function go (){
         alert("transaction successful")
         var textNode = document.getElementById("state").innerHTML ="ON "+ new Date() +" " + " DEPOSIT WAS MADE"
         localStorage.setItem("statements", textNode)
-window.location.href = 'index.html'
+window.location.href = 'main.html'
     }else{
         alert("Oops sorry an error occured or wrong inputs")
     } 
@@ -22,15 +23,16 @@ let disStatements = localStorage.getItem("statements");
 document.getElementById('states').innerHTML = disStatements
 
 function minus (){
+    let overBal = localStorage.getItem('defBal')
   let withVal =  document.getElementById('with').value
-  if(withVal !="" && withVal >49){
+  if(withVal !="" && withVal >49 && withVal < overBal){
     let withStoredBal = localStorage.getItem("defBal");
     let wBar = Number(withStoredBal)-Number(withVal)
     localStorage.setItem("defBal", wBar)
         alert("transaction successful")
         var textNode = document.getElementById("state").innerHTML ="ON "+ new Date() +" " + " WITHDRAWAL WAS MADE"
         localStorage.setItem("statements", textNode)
-        window.location.href = 'index.html'
+        window.location.href = 'main.html'
   }else {
       alert("Oops sorry an error occured or wrong inputs")
   }
