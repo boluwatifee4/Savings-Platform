@@ -80,6 +80,7 @@
         <span onclick="closeFormAuto()">Close Form</span>
         <div class="container">
             <div class="my-3">
+                <p class="info">Please wait untill page says Successful</p>
                 <h1>Auto Savings Assistant</h1>
                 <h3 id="wal"></h3>
                 <input placeholder="Enter Amount"  type="number" id="amount" class="input border-0 w-75 px-2 py-3 rounded d-block">
@@ -137,7 +138,7 @@ document.getElementById('myFormAuto').style.display="none";
   <script>
 
 let wall = localStorage.getItem("wallet");
-        document.getElementById('wal').innerHTML = "Wallet Bal : ₦" + wall ;
+        document.getElementById('wal').innerHTML = "Savings Pot Bal : ₦" + wall ;
         function ren() {
             let savingsAmount = document.getElementById("amount").value
             let x = document.getElementById("select").selectedIndex;
@@ -154,17 +155,18 @@ let wall = localStorage.getItem("wallet");
                     localStorage.setItem("defBal", bala)
                     localStorage.setItem("wallet", save)
                     alert('Succesful')
+                    window.location.replace("main.html")
                 }
                 else {
                     clear()
                     alert("Top-up account")
-                    window.location.replace("index.html")
+                    window.location.replace("main.html")
                 }
             }
             if (savingsAmount != "") {
 
                 if (option == "Daily") {
-                    range = setInterval(deduct, 24000)
+                    range = setInterval(deduct, 2000)
                 }
                 else if (option == "Weekly") {
                     range = setInterval(deduct, 6000)
@@ -189,7 +191,7 @@ let wall = localStorage.getItem("wallet");
                 localStorage.setItem("wallet",withAuto)
                 localStorage.setItem("defBal",NewDefBal)
                 alert('Successful')
-                window.location.href = 'index.html'
+                window.location.href = 'main.html'
             }else {
                 alert("error")
             }
