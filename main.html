@@ -28,7 +28,7 @@
     </div>
     <div>
         <div class="intro">
-            <h1>Hi Welcome To Bima's Savings Platform</h1>
+            <h1 id="InTro"></h1>
             <p>Getting to experience a lit savings habit in an easier  way</p>
             <h3>Pls select a savings mode</h3>
         </div>
@@ -133,6 +133,8 @@ document.getElementById('myFormCal').style.display="none";
 function closeFormAuto() {
 document.getElementById('myFormAuto').style.display="none";
 }
+var gNa = localStorage.getItem("Sna")
+document.getElementById("InTro").innerHTML= "Hello " + gNa + " Welcome To Bima's Savings Platform"
    </script>
   
   <script>
