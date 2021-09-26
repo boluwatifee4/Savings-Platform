@@ -5,7 +5,7 @@ meant to calculate amount of money to be saved daily within a specified date ran
 
 An auto saver that helps deduct amount to be saved form main account balance in 
 
-a selected pattern and also  withdrawal and depositing from account balance.
+a selected pattern and also  withdrawal and depositing from account balance, and a Savings pot where savings go to that can withdrawn into main account balance
 
 ## *Technology Used
 - HTML
@@ -19,6 +19,7 @@ a selected pattern and also  withdrawal and depositing from account balance.
 - Deposite Into Account Balance
 - Savings Calculator
 - Auto Savings Assistant
+- Savings Pot
 
 ## Author
 Ola Boluwatife
