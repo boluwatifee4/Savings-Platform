@@ -7,37 +7,35 @@
 }
 
 header{
+    padding: 1rem;
     display: flex;
-    justify-content: space-between;
-    margin: 3rem 3rem;
+    justify-content: space-around;
+    margin: 2rem .1rem;
+    box-shadow: 0 15px 16px -10px rgb(0 103 245 / 30%);
+    border-radius: 2rem;
+    position: sticky;
+    top: 0;
 }
 header span{
     border-radius: 1rem ;
 }
-.main{
-    display: flex;
-    align-content: center;
-    text-align: left;
-    margin: 5rem 6rem;
-    padding: 2rem 10rem;
-    margin-left: 0;
-    padding-left: 0;
-}
-.main img{
-    width: 250%;
-}
-.text{
-    margin: 7rem 1.5rem;
-    padding: 3rem 2rem;
-}
+
+
 .text h1{
     font-size: 3rem;
 }
 .text p{
     font-size: 1.5rem;
 }
+.r-img{
+    margin-top: -10rem;
+}
+
 .btns{
+    margin-top: 1rem;
     text-align: center;
+    display: flex;
+    gap: .5rem;
 }
 .box{
     
@@ -57,7 +55,7 @@ form{
     display: none;
     
 }
-.container{
+.container, .containe, .contain{
     margin: 5rem .2rem;
     padding: 4rem .2rem;
     gap: 5rem;
@@ -121,19 +119,22 @@ button{
      cursor: pointer;
  }
  .acct{
-     margin: 2rem 1.5rem;
-     text-align: center;
-     align-items: center;
+     display: flex;
      justify-content: center;
-     position: sticky;
-     top: 0;
-     background-color: #112fd9;
-text-align: center;
+     margin: 2rem 1.5rem;
+     /* text-align: center;
+     align-items: center;
+     justify-content: center; */
+     /* position: sticky;
+     top: 0; */
+     background-color: #fa164c;
+     box-shadow: 1px 12px 24px rgb(2 43 105 / 5%);
+/* text-align: center; */
 color: white;
 border-radius: .5rem;
 padding: 20px;
-width: fit-content;
-animation: beam 2.6s infinite ease-in-out;
+/* width: fit-content; */
+/* animation: beam 2.6s infinite ease-in-out; */
  }
  @keyframes beam {
      0%{
@@ -141,28 +142,25 @@ animation: beam 2.6s infinite ease-in-out;
      }
     
      50%{
-         transform: scale(.85);
+         transform: scale(1);
      }
      
      100%{
          transform: scale(.95);
      }
  }
- .beamer{
-animation: beam 2.6s infinite ease-in-out;
-    margin: 2rem 0rem;
+ /* .beamer{ */
+/* animation: beam 2.6s infinite ease-in-out; */
+    /* margin: 2rem 0rem;
     position: sticky;
     top: 0;
     background-color: #c0e4fc;
-    width: 20%;
     padding: .2px 0;
-    border-radius: 3rem;
- }
+    border-radius: 3rem; */
+ /* } */
  
  
- header{
-     margin: 2rem 1rem;
- }
+ 
  .intro {
      text-align: center;
      margin: 4rem 1rem;
@@ -170,43 +168,54 @@ animation: beam 2.6s infinite ease-in-out;
  }
 
  
- span{
+ span a{
      background-color: #112fd9;
      padding: 1rem 1rem;
      color: white;
-     margin: 2rem ;
      cursor: pointer;
+    transition: ease-in-out 1s;
+
  }
  span:hover{
-     background-color: #c0e4fc;
-     color: #112fd9;
-     font-size: 1.5rem;
+     font-size: 1rem;
      font-weight: 500;
      border-radius: 1rem;
-    transition: ease-in-out .4s;
-    box-shadow:5px 5px 5px 6px #112fd9;
+    transition: ease-in-out 1s;
+    box-shadow: 1px 12px 24px rgb(2 43 105 / 5%);
  }
  .imgH img{
-    width: 180%;
+    width: auto;
  }
 
  @media only screen and (max-width:1179px) and (min-width:320px) {
     header{
-        justify-content: space-between;
-        gap: 7rem;
-    } 
-    header span{
-        font-size: .6rem;
+        padding: 1rem !important;
+        margin: 1rem !important;
+    }
+    .nav-btns{
+        gap: 1rem !important;
+        margin: .2rem .5rem !important;
+    }
+    .nav-btns a{
+        padding: .1rem .5rem !important;
+    }
+    .logo{
+        font-size: 1.7rem !important;
     }
     .main{
         flex-direction: column  ;
         justify-content: center;
-        margin: 5rem 0;
+        margin: 1rem 1rem !important;
         padding: 0;
+        gap: 0 !important;
     }
-    .main img{
-        width: 86%;
-    }
+    img{
+       display: none;
+   }
+   .r-img{
+       display: block;
+       margin-top: 0;
+   }
     .text{
         width: 100%;
         margin: 3rem 0;
@@ -217,15 +226,15 @@ animation: beam 2.6s infinite ease-in-out;
         color:red !important;
     }
     .text h1{
-        font-size: 1rem;
+        font-size: 2rem !important;
         text-align: center;
     }
     
     .text p{
-        font-size: 1rem;
+        font-size: 1.2rem !important;
     }
     .btns{
-         margin: .1rem 2rem;
+         margin: .9rem 2rem;
          display: flex;
          flex-direction: column;
      }
@@ -241,15 +250,26 @@ animation: beam 2.6s infinite ease-in-out;
      .box{
          margin: 1rem 1rem;
      }
-     .beamer{
-        width: 57%;
-     }
+     
      .container{
          display: flex;
          flex-direction: column;
          margin: 1rem 0;
          padding: 0;
      }
+     .containe, .contain{
+         display: flex;
+         flex-direction: column;
+         margin: 1rem .7rem;
+         padding: 1rem 0;
+         margin-top: 6.5rem;
+         border-radius: 2rem;
+    box-shadow: 5px 12px 60px rgb(0 103 245 / 30%);
+     }
+     .contain{
+         margin-top: 0;
+     }
+     
      .cup{
          margin: 1rem 1rem;
      }

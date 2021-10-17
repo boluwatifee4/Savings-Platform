@@ -13,98 +13,95 @@
 <body>
     <header>
         <div class="logo">
-            <h1>BIMA</h1>
+            <h1 id="InTro"></h1>
         </div>
     </header>
-   <div class="box">
-    <div class="beamer">
+<div class="contain">
+    <div class="box">
+    
         <div class="acct">
             <p id="acctName"></p>
             <h1 id="acctBal"></h1>
         </div>
-    </div>
-    <div class="state">
-
-    </div>
+    
+  
     <div>
-        <div class="intro">
-            <h1 id="InTro"></h1>
-            <p>Getting to experience a lit savings habit in an easier  way</p>
-            <h3>Pls select a savings mode</h3>
-        </div>
-        <div class="btns">
-            <span onclick="openFormCal()">Savings Calculator</span> <span onclick="openFormAuto()">Auto Save</span> <span onclick="openFormDep()">Deposit/Withdrawal</span>
+        <hr>
+        <div class="btns"> 
+            <span onclick="openFormCal()"><a href="#myFormCal">Savings Calculator</a></span> <span onclick="openFormAuto()"><a href="#myFormAuto">Savings Calculator</a></span> <span onclick="openFormDep()"><a href="#myFormDep">Deposit/Withdrawal</a></span>
         </div>
     </div>
    </div>
 
 
-    <div class="cup dep" id="myFormDep">
-        <span onclick="closeFormDep()">Close Menu</span>
-        <div class="container">
-            <div class="deposit">
-                <h1>Deposit here to <br> increase your Account balance</h1>
-                <input type="number" placeholder="please enter deposit amount" id="depo" max="500">
-                <!-- <input type="text" class="form-input" id="userName" autofocus placeholder="username">
-                <input type="password" placeholder="enter your login password" id="passWord"> -->
-                <button onclick="go()">Deposit</button>
-            </div>
-            <div class="withdraw">
-                <h1>Withdrawal</h1>
-                <input type="number" placeholder="please enter withdrawal amount" id="with" max="500">
-                <!-- <input type="text" class="form-input" id="userName" autofocus placeholder="username">
-                <input type="password" placeholder="enter your login password" id="passWord"> -->
-                <button onclick="minus()">withdraw</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="cup cal" id="myFormCal">
-        <span onclick="closeFormCal()">Close Menu</span>
-        <div class="container">
-            <img src="./side-index.jpg" alt="">
-            <form>
-                <h1 class="display-6 fw-bold">Target Savings</h1>
-                <input type="text" id="inputS" class="input" placeholder="Give your journey a name">
-                <input type="number" class="input" required id="goal" placeholder="Enter your target amount">
-                <input type="date" class="input" required id="start">
-                <input type="date" class="input" required id="end">
-                <button onclick="run()">Submit</button>
-            </form>
-            <h1 id="saved"></h1>
-        </div>
-    </div>
-   
-    
-    <div class="cup auto" id="myFormAuto">
-        <span onclick="closeFormAuto()">Close Form</span>
-        <div class="container">
-            <div class="my-3">
-                <p class="info">Please wait untill page says Successful</p>
-                <h1>Auto Savings Assistant</h1>
-                <h3 id="wal"></h3>
-                <input placeholder="Enter Amount"  type="number" id="amount" class="input border-0 w-75 px-2 py-3 rounded d-block">
-                <select class="input border-0 w-75 px-2 py-3 my-3 rounded d-block" id="select" >
-                    <option value="">Daily</option>
-                    <option value="">Weekly</option>
-                    <option value="">Monthly</option>
-                </select> 
-                <button class="btn btn-info my-2 text-light fw-bold" onclick="ren()">Submit</button>
-                <!-- <a href="./flex2.html" class="btn btn-info fw-bold my-2 text-light">Wallet Profile</a> -->
-            </div>
-            <div class="wee">
-                <h1>Enter amount to withdraw from your savings pot</h1>
-                <input type="number" id="autoWith" placeholder="enter amount to withdraw from your savings pot">
-                <button class="btn btn-info my-2 text-light fw-bold" onclick="rumm()">Submit</button>
-            </div>
-        </div>
-    </div>
+  
     <div class=" statement" >
         <ul id="state">
             <li id="states"></li>
             <li id="statess"></li>
         </ul>
     </div>
+</div>
+<div class="cup dep" id="myFormDep">
+    <span onclick="closeFormDep()">Close Menu</span>
+    <div class="container">
+        <div class="deposit">
+            <h1>Deposit here to <br> increase your Account balance</h1>
+            <input type="number" placeholder="please enter deposit amount" id="depo" max="500">
+            <!-- <input type="text" class="form-input" id="userName" autofocus placeholder="username">
+            <input type="password" placeholder="enter your login password" id="passWord"> -->
+            <button onclick="go()">Deposit</button>
+        </div>
+        <div class="withdraw">
+            <h1>Withdrawal</h1>
+            <input type="number" placeholder="please enter withdrawal amount" id="with" max="500">
+            <!-- <input type="text" class="form-input" id="userName" autofocus placeholder="username">
+            <input type="password" placeholder="enter your login password" id="passWord"> -->
+            <button onclick="minus()">withdraw</button>
+        </div>
+    </div>
+</div>
+
+<div class="cup cal" id="myFormCal">
+    <span onclick="closeFormCal()">Close Menu</span>
+    <div class="container">
+        <img src="./side-index.jpg" alt="">
+        <form>
+            <h1 class="display-6 fw-bold">Target Savings</h1>
+            <input type="text" id="inputS" class="input" placeholder="Give your journey a name">
+            <input type="number" class="input" required id="goal" placeholder="Enter your target amount">
+            <input type="date" class="input" required id="start">
+            <input type="date" class="input" required id="end">
+            <button onclick="run()">Submit</button>
+        </form>
+        <h1 id="saved"></h1>
+    </div>
+</div>
+
+
+<div class="cup auto" id="myFormAuto">
+    <span onclick="closeFormAuto()">Close Form</span>
+    <div class="container">
+        <div class="my-3">
+            <p class="info">Please wait untill page says Successful</p>
+            <h1>Auto Savings Assistant</h1>
+            <h3 id="wal"></h3>
+            <input placeholder="Enter Amount"  type="number" id="amount" class="input border-0 w-75 px-2 py-3 rounded d-block">
+            <select class="input border-0 w-75 px-2 py-3 my-3 rounded d-block" id="select" >
+                <option value="">Daily</option>
+                <option value="">Weekly</option>
+                <option value="">Monthly</option>
+            </select> 
+            <button class="btn btn-info my-2 text-light fw-bold" onclick="ren()">Submit</button>
+            <!-- <a href="./flex2.html" class="btn btn-info fw-bold my-2 text-light">Wallet Profile</a> -->
+        </div>
+        <div class="wee">
+            <h1>Enter amount to withdraw from your savings pot</h1>
+            <input type="number" id="autoWith" placeholder="enter amount to withdraw from your savings pot">
+            <button class="btn btn-info my-2 text-light fw-bold" onclick="rumm()">Submit</button>
+        </div>
+    </div>
+</div>
   
   <script>
         function openFormDep() {
@@ -134,7 +131,7 @@ function closeFormAuto() {
 document.getElementById('myFormAuto').style.display="none";
 }
 var gNa = localStorage.getItem("Sna")
-document.getElementById("InTro").innerHTML= "Hello " + gNa + " Welcome To Bima's Savings Platform"
+document.getElementById("InTro").innerHTML= " Welcome " + gNa;
    </script>
   
   <script>
