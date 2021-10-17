@@ -193,6 +193,7 @@ padding: 20px;
         margin: 1rem !important;
     }
     .nav-btns{
+        display: flex !important;
         gap: 1rem !important;
         margin: .2rem .5rem !important;
     }
@@ -237,6 +238,7 @@ padding: 20px;
          margin: .9rem 2rem;
          display: flex;
          flex-direction: column;
+         gap: 2rem !important;
      }
      span{
          margin: 1rem 0;
