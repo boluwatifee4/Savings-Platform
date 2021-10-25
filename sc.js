@@ -1,5 +1,10 @@
 let disPlayBal = localStorage.getItem("defBal");
-document.getElementById('acctBal').innerHTML =   "₦ " + disPlayBal
+if (disPlayBal === null){
+    document.getElementById('acctBal').innerHTML =   "₦ 00"
+}else{
+    document.getElementById('acctBal').innerHTML =   "₦ " + disPlayBal
+}
+
 // localStorage.setItem("ShowBal",OriginalBal);
 // let defBal = 500
 // localStorage.setItem("defACCBal", defBal)
