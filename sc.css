@@ -16,9 +16,8 @@ body{
     align-items: center;
     text-align: center;
     color: white;
-    gap: 1rem;
-    padding: 5rem 1rem;
-    margin: 3rem 1rem;
+    padding: 5rem 0rem;
+    margin: 3rem 0rem;
 }
 .message h1{
     font-size: 2rem;
@@ -45,6 +44,9 @@ body{
             }
         }
 
+        h1, .wave, h3, p, ul{
+            margin: 1rem;
+        }
         .wave{
             animation: tangerine 3s ease-out infinite normal;
             font-size: 2rem;
@@ -63,7 +65,7 @@ body{
     
 .index{
     text-transform: capitalize;
-    padding: 1rem;
+    padding: 1.4rem;
 }
 .index a{
     text-decoration: none;
