@@ -1,73 +1,124 @@
-.nav-btns{
-    display: flex;
-    justify-content: space-between; 
-    gap: 2rem ;
-    margin: .2rem 2rem;
-}
-.nav-btns a{
-    font-size: 1rem;
-    padding:.8rem 1.3rem;
-    border: 1px solid #112fd9;
-    border-radius: 5px;
-    font-weight: 600 ;
-    color: #112fd9;
-    transition: ease-in-out 1s;
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style-type: none;
+    }
+   body{
+       background-color:#022c52;
+   }
+    .head{
+        padding: 3rem;
+         background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+         color: white; 
+        border-bottom-right-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+    box-shadow: 0 40px 60px rgb(0 0 0 / 50%);
 
-}
-.nav-btns a:nth-child(2){
-    background-color: #112fd9;
-    color: white;
-}
-.nav-btns a:hover{
-    box-shadow: 0 15px 16px -10px rgb(0 103 245 / 30%);
-    font-size: 1.1rem;
-    transition: ease-in-out 1s;
-    background-color: #112fd9;
-    color: white;
-}
+    }
 
 .logo{
-    font-size: 2.8rem;
-}
-.main{
-    display: flex;
-    justify-content: space-between;
-    margin: 10rem 3rem;
-    gap: 5rem;
-}
-.text{
-    text-align: left;
-}
-.text h1{
-    font-size: 3.7rem;
-    margin: 1rem 0;
-    color: #022b69;
-
-}
-.text p{
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: #022b69;
-}
-.btns{
-    border: none;
-    padding: 1rem 1rem;
-    justify-content: center;
     font-size: 1.2rem;
-    background-color: #112fd9;
-    color: white;
-    border-top-right-radius: 1rem;
-    border-bottom-left-radius: 1rem ;
-    transition: linear .8s;
-    margin: .5rem 0;
+    margin: .5rem;
+    margin: 1rem;
+    text-align: center;
 }
- .btns:hover{
-    background-color: #c0e4fc;
-    color: #112fd9;
-    border-top-left-radius: 2rem;
-    border-bottom-right-radius: 2rem ;
-    font-weight: bold;
- }
- img {
-    width: 100% !important;
+#acctBal{
+    text-align: center;
+    font-size: 2.5rem;
+}
+.grp{
+    margin: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+.grp a{
+    font-weight: 600;
+    color: white;
+    font-size: 1.2rem;
+}
+ .grp label {
+    box-shadow: 0 10px 20px rgb(0 0 0 / 50%);
+    border: 1px solid white;
+     padding: 1rem;
+     border-radius: 2rem;
+     /* background-image: linear-gradient(to right top, #845EC2, #2C73D2,#0081CF, #0089BA, #008E9B); */
+}
+.depI{
+    color: green;
+    font-size: 1.5rem;
+}
+.depW{
+    font-size: 1.5rem;
+    color: rgb(189, 8, 8);
+}
+
+.cup{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 4rem;
+    position: absolute;
+    left: 25%;
+    top: 5%;
+    box-shadow: 0 40px 60px rgb(0 0 0 / 50%);
+    background-color: white;
+    border-radius: 10px;
+    animation: left 1s ease-in-out;
+}
+@keyframes left {
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(100%);
+    }
+}
+.deposit, .withdraw, form, .my-3, .wee{
+    margin: .7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+button{
+    padding: .5rem;
+    text-transform: uppercase;
+}
+input{
+    padding: .8rem;
+}
+span{
+    background-color: red;
+    color: white;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: 1rem;
+}
+
+ .dep, .cal, .auto{
+    display: none;
+}
+
+.statement{
+    color: white;
+    margin: 2rem;
+}
+#state{
+    margin: 1rem;
+}
+
+@media only screen and (max-width:1024px) and (min-width:280px)  {
+    .logo{
+        font-size: .5rem;
+    }
+    .grp{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .cup{
+        left: 1%;
+    }
 }

@@ -6,57 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5daf43d836.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="sc.css">
+    <link rel="stylesheet" href="sc2.css">
     <title>TargetSave</title>
 </head>
 
 <body>
-    <header>
+       <div class="head">
         <div class="logo">
             <h1 id="InTro"></h1>
         </div>
-    </header>
+        <div class="acct">
+            <h1 id="acctBal"></h1>
+        </div>
+       </div>
 <div class="contain">
     <div class="box">
     
-        <div class="acct">
-            <p id="acctName"></p>
-            <h1 id="acctBal"></h1>
-        </div>
-    
-  
     <div>
-        <hr>
-        <div class="btns"> 
-            <span onclick="openFormCal()"><a href="#myFormCal">Savings Calculator</a></span> <span onclick="openFormAuto()"><a href="#myFormAuto">Savings Calculator</a></span> <span onclick="openFormDep()"><a href="#myFormDep">Deposit/Withdrawal</a></span>
+        <div class="grp"> 
+            <label onclick="openFormCal()"><a href="#myFormCal"><i class="fas fa-calculator"></i> Savings Calculator</a></label> <label onclick="openFormAuto()"><a href="#myFormAuto"><i class="fas fa-piggy-bank"></i> Savings Pot Assistant</a></label> <label onclick="openFormDep()"><a href="#myFormDep"><i class="fas fa-long-arrow-alt-down depI"></i> Deposit / <i class="fas fa-long-arrow-alt-up depW"></i> Withdrawal</a></label>
         </div>
     </div>
    </div>
 
-
-  
     <div class=" statement" >
+        <h1>Recent <i class="fas fa-history"></i></h1>
         <ul id="state">
             <li id="states"></li>
             <li id="statess"></li>
         </ul>
     </div>
 </div>
+
 <div class="cup dep" id="myFormDep">
     <span onclick="closeFormDep()">Close Menu</span>
     <div class="container">
         <div class="deposit">
-            <h1>Deposit here to <br> increase your Account balance</h1>
+            <h1>Deposit here <i class="fas fa-long-arrow-alt-down depI"></i></h1>
             <input type="number" placeholder="please enter deposit amount" id="depo" max="500">
-            <!-- <input type="text" class="form-input" id="userName" autofocus placeholder="username">
-            <input type="password" placeholder="enter your login password" id="passWord"> -->
             <button onclick="go()">Deposit</button>
         </div>
         <div class="withdraw">
-            <h1>Withdrawal</h1>
+            <h1>Withdraw Here <i class="fas fa-long-arrow-alt-up depW"></i></h1>
             <input type="number" placeholder="please enter withdrawal amount" id="with" max="500">
-            <!-- <input type="text" class="form-input" id="userName" autofocus placeholder="username">
-            <input type="password" placeholder="enter your login password" id="passWord"> -->
             <button onclick="minus()">withdraw</button>
         </div>
     </div>
@@ -65,7 +57,6 @@
 <div class="cup cal" id="myFormCal">
     <span onclick="closeFormCal()">Close Menu</span>
     <div class="container">
-        <img src="./side-index.jpg" alt="">
         <form>
             <h1 class="display-6 fw-bold">Target Savings</h1>
             <input type="text" id="inputS" class="input" placeholder="Give your journey a name">
