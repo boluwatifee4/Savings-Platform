@@ -30,12 +30,24 @@
    </div>
 
     <div class=" statement" >
+       <div class="states">
         <h1>Recent <i class="fas fa-history"></i></h1>
         <ul id="state">
             <li id="states"></li>
             <li id="statess"></li>
         </ul>
+       </div>
+        <i class="fas fa-cog" style="float: right; font-size: 1.5rem;margin-bottom: 2rem;" id="reset"></i>
     </div>
+</div>
+<div class="reset cup">
+    <button id="hideReset">X</button>
+    <p>Please note that every action taken here would result to a permanent loss of data</p>
+    <ul>
+        <li>RESET ACCOUNT DETAILS AND HISTORY</li><button id="acctDetails">CLICK HERE</button>
+        <hr>
+        <li>RESET GENERAL DETAILS AND HISTORY</li><button id="generalDetails">CLICK HERE</button>
+    </ul>
 </div>
 
 <div class="cup dep" id="myFormDep">
@@ -61,7 +73,9 @@
             <h1 class="display-6 fw-bold">Target Savings</h1>
             <input type="text" id="inputS" class="input" placeholder="Give your journey a name">
             <input type="number" class="input" required id="goal" placeholder="Enter your target amount">
+            <label>Select Start Date</label>
             <input type="date" class="input" required id="start">
+            <label>Select End Date</label>
             <input type="date" class="input" required id="end">
             <button onclick="run()">Submit</button>
         </form>
@@ -128,7 +142,11 @@ document.getElementById("InTro").innerHTML= " Welcome " + gNa;
   <script>
 
 let wall = localStorage.getItem("wallet");
-        document.getElementById('wal').innerHTML = "Savings Pot Bal : ₦" + wall ;
+if(wall === null){
+    document.getElementById('wal').innerHTML = "Savings Pot Bal : ₦ 00";
+}else{
+     document.getElementById('wal').innerHTML = "Savings Pot Bal : ₦" + wall ;
+}
         function ren() {
             let savingsAmount = document.getElementById("amount").value
             let x = document.getElementById("select").selectedIndex;
@@ -137,7 +155,7 @@ let wall = localStorage.getItem("wallet");
             let range;
             let save = Number(localStorage.getItem("wallet"))
             let bala = Number(localStorage.getItem("defBal"))
-            function clear() { clearInterval(interval, 1000) }
+            // function clear() { clearInterval(interval, 1000) }
             function deduct() {
                 if ((bala - Number(savingsAmount)) >= 600 && savingsAmount >49) {
                     bala -= Number(savingsAmount)
@@ -148,8 +166,8 @@ let wall = localStorage.getItem("wallet");
                     window.location.replace("main.html")
                 }
                 else {
-                    clear()
-                    alert("Top-up account")
+                    // clear()
+                    alert("Top-up account balance")
                     window.location.replace("main.html")
                 }
             }
@@ -159,7 +177,7 @@ let wall = localStorage.getItem("wallet");
                     range = setInterval(deduct, 2000)
                 }
                 else if (option == "Weekly") {
-                    range = setInterval(deduct, 6000)
+                    range = setInterval(deduct, 1000)
                 }
                 else if (option == "Monthly") {
                     range = setInterval(deduct, 10000)
@@ -188,6 +206,7 @@ let wall = localStorage.getItem("wallet");
         }
     </script>
     <script src="sc.js"></script>
+    <script src="savings1.js"></script>
 </body>
 
 </html>
