@@ -6,25 +6,34 @@
 
 Savings-Platform is a JavaScript project designed to help users manage their savings effectively. It provides a dashboard to view account balances, a savings calculator to determine daily savings amounts, an auto-saver feature for automated deductions, and functionalities for withdrawals and deposits. It also includes a Savings Pot where saved funds are stored, allowing for easy transfers.
 
+## Features
+
+*   **Account Balance Display:** Displays the current account balance.
+*   **Savings Calculator:** Calculates daily savings amounts.
+*   **Auto-Saver:** Automates savings deductions.
+*   **Withdrawals and Deposits:** Allows users to manage transactions.
+*   **Savings Pot:** A dedicated area to store saved funds.
+*   **Reset Functionality:** Resets account details.
+
 ## Installation
 
-This project is a front-end JavaScript application. To run it, you'll need a web browser.  No specific installation steps are required beyond having a modern web browser.
+This project is a front-end JavaScript application and does not require a traditional installation process. To use it:
 
-1.  **Clone the repository (Optional):** If you want to modify the code, clone the repository to your local machine using Git:
-
+1.  **Clone the repository:**
     ```bash
     git clone <repository_url>
     ```
-
-2.  **Open the HTML file:** Navigate to the directory containing the project files and open the `index.html` or `main.html` file (or the main HTML file) in your web browser.
+    (Replace `<repository_url>` with the actual URL of your repository.)
+2.  **Open the project:** Navigate to the project directory in your terminal.
+3.  **Open `index.html` or `main.html`:** Open either of these files in your web browser to run the application.
 
 ## Usage
 
-The application is accessed through a web browser.  Here are some examples of how to interact with the Savings-Platform:
+The application is designed to be user-friendly. Here are some examples of how to use the key features:
 
 **1. Viewing Account Balance:**
 
-The `sc.js` file retrieves and displays the account balance from local storage.
+The account balance is displayed on the main dashboard. The `sc.js` file retrieves the balance from local storage and displays it.
 
 ```javascript
 let disPlayBal = localStorage.getItem("defBal");
@@ -37,7 +46,7 @@ if (disPlayBal === null){
 
 **2. Resetting Account Details:**
 
-The `savings1.js` file includes a function to reset account details.
+The `savings1.js` file contains a function to reset account details.
 
 ```javascript
 document.getElementById('acctDetails').addEventListener('click', ()=>{
@@ -48,33 +57,23 @@ document.getElementById('acctDetails').addEventListener('click', ()=>{
 })
 ```
 
-**3. Deposit Functionality:**
+**3. Making a Deposit:**
 
-The `sc.js` file includes a deposit function.
+The `sc.js` file includes a function to handle deposits.
 
 ```javascript
 function go (){
     let overBal = localStorage.getItem('defBal')
     let inMoney = document.getElementById('depo').value;
     if (inMoney !="" && inMoney > 49){
-        let newBal = parseInt(overBal) + parseInt(inMoney);
+        let newBal = parseInt(overBal) + parseInt(inMoney)
         localStorage.setItem("defBal", newBal)
-        window.location.reload()
+        window.location.href = "main.html"
     }else{
         alert("Enter a valid amount")
     }
 }
 ```
-
-## Features
-
-*   **Account Balance Display:** Displays the current account balance.
-*   **Savings Calculator:** Calculates daily savings amounts.
-*   **Auto-Saver:** Automated deductions for savings.
-*   **Withdrawal Functionality:** Allows users to withdraw funds.
-*   **Deposit Functionality:** Allows users to deposit funds.
-*   **Savings Pot:** Stores saved funds.
-*   **Account Reset:** Resets account details.
 
 ## Contributing
 
