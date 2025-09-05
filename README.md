@@ -4,36 +4,47 @@
 
 ## Introduction
 
-Savings-Platform is a JavaScript project designed to help users manage their savings effectively. It provides a dashboard to view account balances, a savings calculator to determine daily savings amounts, an auto-saver feature for automated deductions, and functionalities for withdrawals and deposits. It also includes a Savings Pot where saved funds are stored, allowing for easy transfers.
+Savings-Platform is a JavaScript project designed to help users manage their savings effectively. It provides a dashboard to view account balances, a savings calculator to determine daily savings amounts, an auto-saver feature for automated deductions, and functionalities for withdrawals and deposits. It also includes a Savings Pot where saved funds are stored, allowing for easy transfer.
 
 ## Features
 
 *   **Account Balance Display:** Displays the current account balance.
-*   **Savings Calculator:** Calculates daily savings amounts.
-*   **Auto-Saver:** Automates savings deductions.
-*   **Withdrawals and Deposits:** Allows users to manage transactions.
-*   **Savings Pot:** A dedicated area to store saved funds.
+*   **Savings Calculator:** Calculates daily savings amounts based on user input.
+*   **Automated Savings:** Auto-saver feature for automated deductions.
+*   **Withdrawal and Deposit Functionality:** Allows users to withdraw and deposit funds.
+*   **Savings Pot:** A dedicated space to store saved funds.
 *   **Reset Functionality:** Resets account details.
 
 ## Installation
 
-This project is a front-end JavaScript application and does not require a traditional installation process. To use it:
+This project is a front-end JavaScript application and does not require a complex installation process. To run the project:
 
 1.  **Clone the repository:**
     ```bash
     git clone <repository_url>
     ```
-    (Replace `<repository_url>` with the actual URL of your repository.)
-2.  **Open the project:** Navigate to the project directory in your terminal.
-3.  **Open `index.html` or `main.html`:** Open either of these files in your web browser to run the application.
+    (Replace `<repository_url>` with the actual URL of your repository)
+
+2.  **Open the project directory:**
+    ```bash
+    cd Savings-Platform
+    ```
+
+3.  **Open `index.html` or `main.html` in your web browser:**  The project is designed to run directly in a web browser.  No server-side setup is needed.
 
 ## Usage
 
-The application is designed to be user-friendly. Here are some examples of how to use the key features:
+To use the Savings-Platform:
 
-**1. Viewing Account Balance:**
+1.  **Navigate to the main page:** Open `index.html` or `main.html` in your web browser.
 
-The account balance is displayed on the main dashboard. The `sc.js` file retrieves the balance from local storage and displays it.
+2.  **View Account Balance:** The current account balance will be displayed on the dashboard.
+
+3.  **Deposit Funds:** Use the deposit input field and submit to add funds.
+
+4.  **Reset Account:** Click the "Reset" button to clear account details and start fresh.
+
+**Example: Viewing Account Balance (sc.js)**
 
 ```javascript
 let disPlayBal = localStorage.getItem("defBal");
@@ -44,40 +55,9 @@ if (disPlayBal === null){
 }
 ```
 
-**2. Resetting Account Details:**
-
-The `savings1.js` file contains a function to reset account details.
-
-```javascript
-document.getElementById('acctDetails').addEventListener('click', ()=>{
-    localStorage.removeItem("defBal")
-    localStorage.removeItem("statements")
-    localStorage.removeItem("wallet")
-    window.location.href = "main.html"
-})
-```
-
-**3. Making a Deposit:**
-
-The `sc.js` file includes a function to handle deposits.
-
-```javascript
-function go (){
-    let overBal = localStorage.getItem('defBal')
-    let inMoney = document.getElementById('depo').value;
-    if (inMoney !="" && inMoney > 49){
-        let newBal = parseInt(overBal) + parseInt(inMoney)
-        localStorage.setItem("defBal", newBal)
-        window.location.href = "main.html"
-    }else{
-        alert("Enter a valid amount")
-    }
-}
-```
-
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute, please follow these steps:
+Contributions are welcome! If you'd like to contribute to the project, please follow these steps:
 
 1.  Fork the repository.
 2.  Create a new branch for your feature or bug fix.
