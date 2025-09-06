@@ -11,13 +11,13 @@ Savings-Platform is a JavaScript project designed to help users manage their sav
 *   **Account Balance Display:** Displays the current account balance.
 *   **Savings Calculator:** Calculates daily savings amounts.
 *   **Auto-Saver:** Automates savings deductions.
-*   **Withdrawals and Deposits:** Allows users to manage transactions.
+*   **Withdrawal and Deposit Functionality:** Allows users to deposit and withdraw funds.
 *   **Savings Pot:** Stores saved funds.
 *   **Reset Functionality:** Resets account details.
 
 ## Installation
 
-This project is a front-end JavaScript application and does not require a traditional installation process like backend applications. To run this project, follow these steps:
+This project is a front-end JavaScript application and does not require a traditional installation process. To use it:
 
 1.  **Clone the repository:**
     ```bash
@@ -25,15 +25,15 @@ This project is a front-end JavaScript application and does not require a tradit
     ```
     (Replace `<repository_url>` with the actual URL of your repository.)
 
-2.  **Open the project in a web browser:** Navigate to the project directory and open the `index.html` or `main.html` file in your preferred web browser.
+2.  **Open `index.html` (or the main HTML file) in your web browser.**  No server-side setup is required.
 
 ## Usage
 
-The application is designed to be user-friendly. Here are some examples of how to use the key features:
+The application is accessed through a web browser.  Here are some examples of how to interact with the application:
 
 **1. Viewing Account Balance:**
 
-The account balance is displayed on the main dashboard. The `sc.js` file handles the display of the account balance.
+The current account balance is displayed on the main dashboard.  The `sc.js` file handles the display of the balance:
 
 ```javascript
 let disPlayBal = localStorage.getItem("defBal");
@@ -46,7 +46,7 @@ if (disPlayBal === null){
 
 **2. Resetting Account Details:**
 
-The `savings1.js` file contains the code to reset account details.
+The `savings1.js` file contains the functionality to reset account details:
 
 ```javascript
 document.getElementById('acctDetails').addEventListener('click', ()=>{
@@ -57,9 +57,9 @@ document.getElementById('acctDetails').addEventListener('click', ()=>{
 })
 ```
 
-**3. Deposit Functionality:**
+**3. Depositing Funds:**
 
-The `sc.js` file contains the deposit functionality.
+The `sc.js` file handles the deposit functionality.  (Example not fully implemented in provided code, but the structure is present.)
 
 ```javascript
 function go (){
@@ -69,13 +69,15 @@ function go (){
         let newBal = parseInt(overBal) + parseInt(inMoney)
         localStorage.setItem("defBal", newBal)
         window.location.href = "main.html"
+    }else{
+        alert("Please enter a valid amount")
     }
 }
 ```
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute to the Savings-Platform project, please follow these steps:
+Contributions are welcome!  To contribute:
 
 1.  Fork the repository.
 2.  Create a new branch for your feature or bug fix.
